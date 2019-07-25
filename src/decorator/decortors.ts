@@ -69,18 +69,18 @@ export function Log(target: any, key: string, desc: PropertyDescriptor){
     //     console.log(`method ${key} in ${this} is called`);
     //     return ori.apply(this, arguments);
     // };
-    decorate(target, key, desc, function(){
+    decorate(desc, function(){
         console.log(`method ${key} in ${this} is called`);
     });
 }
 
 export function Authenticate(target: any, key: string, desc: PropertyDescriptor){
-    decorate(target, key, desc, function(){
+    decorate(desc, function(){
         console.log(`method ${key} in ${this} is called`);
     });
 }
 
-function decorate(target: any, key: string, desc: PropertyDescriptor, newFunc: () => void){
+function decorate(desc: PropertyDescriptor, newFunc: () => void){
     let ori = desc.value;
     desc.value = function(){
         newFunc.apply(this, arguments);
