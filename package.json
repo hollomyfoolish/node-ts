@@ -1,0 +1,41 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "A simple project for TS",
+  "main": "index.js",
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts",
+      "runOnChangeOnly": true
+    },
+    "buildRun": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts",
+      "runOnChangeOnly": true
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "buildRun": "tsc && node target/test.js",
+    "watch-build": "npm-watch buildRun"
+  },
+  "keywords": [
+    "demo",
+    "ts"
+  ],
+  "author": "hollomyfoolish@163.com",
+  "license": "MIT",
+  "devDependencies": {
+    "npm-watch": "^0.6.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  }
+}
